@@ -39,7 +39,7 @@ public class ApiClient {
                 apiUrl, strIds, ApiKey);
     }
 
-    public String GetApiResponse(ArrayList<Integer> cityIds) 
+    private String GetApiResponse(ArrayList<Integer> cityIds) 
             throws MalformedURLException, IOException {
         URL url = new URL(GetApiUrl(cityIds));
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
