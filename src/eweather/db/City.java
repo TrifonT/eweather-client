@@ -6,63 +6,35 @@
 package eweather.db;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Trifon
  */
 @Entity
-@Table(name = "CITY")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "City.findAll", query = "SELECT c FROM City c")
-    , @NamedQuery(name = "City.findByCityid", query = "SELECT c FROM City c WHERE c.cityid = :cityid")
-    , @NamedQuery(name = "City.findByCityname", query = "SELECT c FROM City c WHERE c.cityname = :cityname")})
 public class City implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @Basic(optional = false)
-    @Column(name = "CITYID")
-    private Integer cityid;
-    @Column(name = "CITYNAME")
-    private String cityname;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    public City() {
+    public Long getId() {
+        return id;
     }
 
-    public City(Integer cityid) {
-        this.cityid = cityid;
-    }
-
-    public Integer getCityid() {
-        return cityid;
-    }
-
-    public void setCityid(Integer cityid) {
-        this.cityid = cityid;
-    }
-
-    public String getCityname() {
-        return cityname;
-    }
-
-    public void setCityname(String cityname) {
-        this.cityname = cityname;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (cityid != null ? cityid.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -73,7 +45,7 @@ public class City implements Serializable {
             return false;
         }
         City other = (City) object;
-        if ((this.cityid == null && other.cityid != null) || (this.cityid != null && !this.cityid.equals(other.cityid))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -81,7 +53,7 @@ public class City implements Serializable {
 
     @Override
     public String toString() {
-        return "eweather.db.City[ cityid=" + cityid + " ]";
+        return "eweather.db.City[ id=" + id + " ]";
     }
     
 }
