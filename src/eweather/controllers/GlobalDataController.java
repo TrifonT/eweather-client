@@ -5,20 +5,9 @@
  */
 package eweather.controllers;
 
-import eweather.db.*;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
-/**
- *
- * @author Trifon
- */
 public class GlobalDataController {
+
     
-    static public void SaveWeatherData(Weatherdata data)
-    {
-        EntityManagerFactory emf  = Persistence.createEntityManagerFactory( "org.hibernate.tutorial.jpa" );
-    }
+    
     
 }
