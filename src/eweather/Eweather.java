@@ -5,6 +5,15 @@
  */
 package eweather;
 
+
+//import eweather.db.*;
+
+import eweather.io.*;
+//import eweather.db.*;
+import java.util.ArrayList;
+//import eweather.controllers.*;
+
+
 /**
  *
  * @author Trifon
@@ -14,8 +23,38 @@ public class Eweather {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args)  throws Exception
+    {
+        
+//        City city = new City();
+//        city.setName("Thessaliniki");
+//        GlobalDataController.SaveCity(city);
+        
+        
+        
+        
+        
+        
+        
+//        ApiClient client = new ApiClient();
+//        
+//        ArrayList<Integer> cities = new ArrayList<>();
+//        cities.add(734077);
+//        cities.add(8133690);
+//        cities.add(264371);     
+//        
+//         ArrayList<Weatherdata> cityWeathers = client.GetWeather(cities);
+//        
+//         for(int i = 0;i<cityWeathers.size();i++)
+//         {
+//             System.out.printf("City with id = %s \n", cityWeathers.get(i).getCityid());
+//             System.out.printf("Weather descr = %s \n", cityWeathers.get(i).getDescription());
+//             System.out.println("-------------------------------------");
+//         }
+         
+         
+        
+        
     }
     
 }

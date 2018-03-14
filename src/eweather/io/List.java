@@ -20,8 +20,8 @@ public class List
     public int visibility;
     public Wind wind;
     public Clouds clouds;
-    public int dt;
-    public int id;
+    public Long dt;
+    public Long id;
     public String name;
     public float rain;
     public float snow;

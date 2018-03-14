@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.net.*;
 import com.google.gson.*;
 import eweather.io.*;
-import eweather.db.*;
+//import eweather.db.*;
 import java.util.Date;
 import java.util.function.Consumer;
 /**
@@ -62,7 +62,6 @@ public class ApiClient {
         WeatherReport report = null;
         try {
             String jstring = GetApiResponse(cityIds);
-            //System.out.println(jstring);
             Gson  gson = new Gson();
            report = gson.fromJson(jstring, WeatherReport.class);
         } catch (JsonSyntaxException | IOException ex) {
@@ -71,27 +70,27 @@ public class ApiClient {
         return report;
     }    
     
-    public ArrayList<Weatherdata> GetWeather(ArrayList<Integer> cityIds)
-    {
-        ArrayList<Weatherdata> list = new ArrayList<>();
-        WeatherReport report = GetWeatherReport(cityIds);
-        if(report!=null)
-        {
-            report.list.forEach((List citydata) -> {
-                Weatherdata data = new Weatherdata();
-                data.setCityid(citydata.id);
-                Date dt = new Date(citydata.dt);
-                data.setDt(dt);
-                data.setTemp(citydata.main.temp);
-                data.setDescription( citydata.weather.get(0).description);
-                data.setClouds(citydata.clouds.all);
-                data.setWindspeed(citydata.wind.speed);
-                data.setRain(citydata.rain);
-                data.setSnow(citydata.snow);
-                list.add(data);
-            }); 
-        }        
-        return list;
-    }
+//    public ArrayList<Weatherdata> GetWeather(ArrayList<Integer> cityIds)
+//    {
+//        ArrayList<Weatherdata> list = new ArrayList<>();
+//        WeatherReport report = GetWeatherReport(cityIds);
+//        if(report!=null)
+//        {
+//            report.list.forEach((List citydata) -> {
+//                Weatherdata data = new Weatherdata();
+//                data.setCityid(citydata.id);
+//                Date dt = new Date(citydata.dt);
+//                data.setDt(dt);
+//                data.setTemp(citydata.main.temp);
+//                data.setDescription( citydata.weather.get(0).description);
+//                data.setClouds(citydata.clouds.all);
+//                data.setWindspeed(citydata.wind.speed);
+//                data.setRain(citydata.rain);
+//                data.setSnow(citydata.snow);
+//                list.add(data);
+//            }); 
+//        }        
+//        return list;
+//    }
     
 }

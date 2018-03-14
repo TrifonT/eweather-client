@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 14, 2018 10:51:13 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="eweather.db.Weatherdata" table="WEATHERDATA" schema="EWEATHER" optimistic-lock="version">
+        <id name="id" type="long">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="cityid" type="long">
+            <column name="CITYID" not-null="true" />
+        </property>
+        <property name="dt" type="date">
+            <column name="DT" length="10" />
+        </property>
+        <property name="temp" type="java.lang.Float">
+            <column name="TEMP" precision="23" scale="0" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="150" />
+        </property>
+        <property name="clouds" type="java.lang.Float">
+            <column name="CLOUDS" precision="23" scale="0" />
+        </property>
+        <property name="windspeed" type="java.lang.Float">
+            <column name="WINDSPEED" precision="23" scale="0" />
+        </property>
+        <property name="rain" type="java.lang.Float">
+            <column name="RAIN" precision="23" scale="0" />
+        </property>
+        <property name="snow" type="java.lang.Float">
+            <column name="SNOW" precision="23" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -3,9 +3,9 @@ package eweather.io;
 public class Sys
 {
     public int type;
-    public int id;
+    public Long id;
     public double message;
     public String country;
-    public int sunrise;
-    public int sunset;
+    public Long sunrise;
+    public Long sunset;
 }
