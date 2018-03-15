@@ -11,8 +11,7 @@ package eweather;
 import eweather.io.*;
 import eweather.db.*;
 import java.util.ArrayList;
-//import eweather.controllers.*;
-
+import eweather.controllers.*;
 
 /**
  *
@@ -20,27 +19,19 @@ import java.util.ArrayList;
  */
 public class Eweather {
 
-    /**
-     * @param args the command line arguments
-     * @throws java.lang.Exception
-     */
+
     public static void main(String[] args)  throws Exception
     {
       
-        
-        
-        
-        
-        
-        
-        
+  
+     
         ApiClient client = new ApiClient();
         
         ArrayList<Integer> cities = new ArrayList<>();
         cities.add(734077);
         cities.add(8133690);
         cities.add(264371);     
-        
+      
          ArrayList<Weatherdata> cityWeathers = client.GetWeather(cities);
         
          for(int i = 0;i<cityWeathers.size();i++)
@@ -50,9 +41,8 @@ public class Eweather {
              System.out.println("-------------------------------------");
          }
          
-         
         
-        
+        System.out.println("Finished");
     }
     
 }
