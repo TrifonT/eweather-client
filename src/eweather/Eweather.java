@@ -22,8 +22,6 @@ public class Eweather {
 
     public static void main(String[] args)  throws Exception
     {
-      
-  
      
         ApiClient client = new ApiClient();
         
@@ -40,7 +38,8 @@ public class Eweather {
              System.out.printf("Weather descr = %s \n", cityWeathers.get(i).getDescription());
              System.out.println("-------------------------------------");
          }
-         
+     
+         EntityManager.SaveWeathers(cityWeathers);
         
         System.out.println("Finished");
     }

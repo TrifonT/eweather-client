@@ -12,7 +12,7 @@ import com.google.gson.*;
 import eweather.io.*;
 import eweather.db.*;
 import java.util.Date;
-import java.util.function.Consumer;
+
 
 /**
  *
@@ -43,8 +43,8 @@ public class ApiClient {
      */
     private String GetApiUrl(ArrayList<Integer> cityIds) {
         String strIds = CovertIdsToString(cityIds);
-        return String.format("%s?id=%s&unit=metric&appid=%s",
-                apiUrl, strIds, ApiKey);
+        return String.format("%s?appid=%s&id=%s&units=metric", 
+                apiUrl, ApiKey, strIds);
     }
 
     /**
@@ -57,6 +57,7 @@ public class ApiClient {
     private String GetApiResponse(ArrayList<Integer> cityIds)
             throws MalformedURLException, IOException {
         URL url = new URL(GetApiUrl(cityIds));
+                 
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", "eWeather client");
@@ -84,6 +85,7 @@ public class ApiClient {
             String jstring = GetApiResponse(cityIds);
             Gson gson = new Gson();
             report = gson.fromJson(jstring, WeatherReport.class);
+            //System.out.println(report.list.get(0).dt);
         } catch (JsonSyntaxException | IOException ex) {
             System.out.println(ex.toString());
         }
@@ -103,7 +105,7 @@ public class ApiClient {
             report.list.forEach((List citydata) -> {
                 Weatherdata data = new Weatherdata();
                 data.setCityid(citydata.id);
-                Date dt = new Date(citydata.dt);
+                Date dt = new Date(citydata.dt*1000);
                 data.setDt(dt);
                 data.setTemp(citydata.main.temp);
                 data.setDescription(citydata.weather.get(0).description);
