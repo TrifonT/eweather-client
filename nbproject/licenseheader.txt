@@ -1,0 +1,12 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix} Ο κώδικας αυτός είναι μέρος της ομαδικής εργασίας 
+${licensePrefix} στο πλαίσο της θεματικής ενότητας ΠΛΗ240 των
+${licensePrefix} φοιτητών του ΕΑΠ
+${licensePrefix} Παυλίδη Άρη
+${licensePrefix} Ταφραλίδη Νικόλαου
+${licensePrefix} Τριανταφυλλίδη Τρύφων
+<#if licenseLast??>
+${licenseLast}
+</#if>

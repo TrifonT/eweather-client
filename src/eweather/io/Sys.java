@@ -1,7 +1,7 @@
 package eweather.io;
 
-public class Sys
-{
+public class Sys {
+
     public int type;
     public Long id;
     public double message;

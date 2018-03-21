@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Mar 22 01:19:04 EET 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0162-4adb-d72a-000006159cf8 
+on database directory F:\Users\Trifon\Documents\NetBeansProjects\eWeather\EWEATHER with class loader sun.misc.Launcher$AppClassLoader@27716f4 
+Loaded from file:/C:/Program%20Files/Java/jdk1.8.0_152/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_152-b16
+user.dir=F:\Users\Trifon\Documents\NetBeansProjects\eWeather
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

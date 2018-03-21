@@ -4,15 +4,18 @@
  * and open the template in the editor.
  */
 package eweather.io;
+
 import java.util.ArrayList;
+
 /**
  *
  * @author Trifon
  */
+public class WeatherReport {
 
-
-public class WeatherReport
-{
+    public int cod;
+    public float message;
     public int cnt;
     public java.util.ArrayList<List> list;
+    public City city;
 }

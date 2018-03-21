@@ -9,8 +9,7 @@ package eweather.io;
  *
  * @author Trifon
  */
+public class Clouds {
 
-public class Clouds
-{
     public float all;
 }

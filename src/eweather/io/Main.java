@@ -9,8 +9,8 @@ package eweather.io;
  *
  * @author Trifon
  */
-public class Main
-{
+public class Main {
+
     public float temp;
     public float pressure;
     public float humidity;
