@@ -135,8 +135,7 @@ public class FormMenu extends javax.swing.JFrame {
         this.setVisible(true);
     }//GEN-LAST:event_jBTN4ActionPerformed
 
-    
-        /**
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) throws InterruptedException {
@@ -182,46 +181,42 @@ public class FormMenu extends javax.swing.JFrame {
             }
         });
     }
-    
+
     private static SplashScreen mySplash;
     private static Rectangle2D splashTextArea;
     private static Rectangle2D splashProgressArea;
     private static Graphics splashGraphics;
     private static Font font;
-    
-    
 
     public static void splashText(String str) {
-        if (mySplash != null && mySplash.isVisible()) {   
-         
+        if (mySplash != null && mySplash.isVisible()) {
+
             splashGraphics.setColor(Color.LIGHT_GRAY);
-            
+
             splashGraphics.setColor(Color.WHITE);
             splashGraphics.drawString(str, (int) (splashTextArea.getX() + 150), (int) (splashTextArea.getY() + 40));
-           
+
             mySplash.update();
         }
     }
 
     private static void splashInit() {
         mySplash = SplashScreen.getSplashScreen();
-        if (mySplash != null) {  
+        if (mySplash != null) {
             Dimension ssDim = mySplash.getSize();
             int height = ssDim.height;
             int width = ssDim.width;
- 
+
             splashTextArea = new Rectangle2D.Double(15., height * 0.88, width * .45, 32.);
             splashProgressArea = new Rectangle2D.Double(width * .55, height * .92, width * .4, 12);
-           
+
             splashGraphics = mySplash.createGraphics();
             font = new Font("Dialog", Font.PLAIN, 14);
             splashGraphics.setFont(font);
-           
-            splashText("Παρακαλώ περιμένετε μέχρι να ολοκληρωθεί η ενημέρωση των στοιχείων");           
+
+            splashText("Παρακαλώ περιμένετε μέχρι να ολοκληρωθεί η ενημέρωση των στοιχείων");
         }
     }
-
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBTN1;

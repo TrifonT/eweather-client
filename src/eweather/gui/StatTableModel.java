@@ -37,8 +37,8 @@ public class StatTableModel extends AbstractTableModel {
     public int getColumnCount() {
         return columnNames.length;
     }
-    
-        @Override
+
+    @Override
     public String getColumnName(int index) {
         return columnNames[index];
     }
@@ -48,7 +48,7 @@ public class StatTableModel extends AbstractTableModel {
         StatData data = statData.get(row);
         switch (col) {
             case 0:
-                return data.CityName;              
+                return data.CityName;
             case 1:
                 return String.format("%.1f", data.MaxTemp);
             case 2:
@@ -61,6 +61,6 @@ public class StatTableModel extends AbstractTableModel {
                 return String.format("%.1f", data.AveTemp);
             default:
                 return "";
-        }       
+        }
     }
 }

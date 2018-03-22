@@ -15,7 +15,7 @@ import java.util.Date;
  */
 public class Translator {
 
-    private static final String[] weekDays = {"", "Κυριακή","Δευτέρα", "Τρίτη",
+    private static final String[] weekDays = {"", "Κυριακή", "Δευτέρα", "Τρίτη",
         "Τετάρτη", "Πέμπτη", "Παρασκευή", "Σάββατο"};
 
     public static String translate(String weatherCode) {
@@ -71,8 +71,8 @@ public class Translator {
 
         SimpleDateFormat f1 = new SimpleDateFormat("dd/MM");
         SimpleDateFormat f2 = new SimpleDateFormat("HH:mm");
-        
-        return String.format("<html><center>%s %s<br>%s</center></html>", 
+
+        return String.format("<html><center>%s %s<br>%s</center></html>",
                 weekDays[dayOfWeek], f1.format(date), f2.format(date));
     }
 }

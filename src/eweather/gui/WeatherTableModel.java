@@ -113,7 +113,6 @@ public class WeatherTableModel extends AbstractTableModel {
         }
     }
 
-
     private ImageIcon getIconFromIconName(String iconName) {
         ImageIcon result = new ImageIcon(getClass().getClassLoader().getResource("resources/icons/" + iconName + ".png"));
         return result;

@@ -29,7 +29,7 @@ import javax.persistence.TemporalType;
     @NamedQuery(name = "Weatherdata.findAll",
             query = "SELECT w FROM Weatherdata w")
     , @NamedQuery(name = "Weatherdata.findById",
-            query = "SELECT w FROM Weatherdata w WHERE w.id = :id")      
+            query = "SELECT w FROM Weatherdata w WHERE w.id = :id")
 
     // Δημιουργούμε αυτό το NamedQuery για να μπορούμε να ανακτήσουμε ένα 
     // αντικείμενο Weatherdata με κωδικό και ημερομηνία και με το εάν 

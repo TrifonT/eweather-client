@@ -55,11 +55,11 @@ public class FormStatistics extends javax.swing.JDialog {
         StatTableModel wtm = new StatTableModel(t);
         jTableStats.setModel(wtm);
     }
-    
-    private String getCityName(Long cityId){
+
+    private String getCityName(Long cityId) {
         String cityName = "";
-        for(int i=0;i<cityList.size();i++){
-            if(cityList.get(i).getId() == cityId ){
+        for (int i = 0; i < cityList.size(); i++) {
+            if (cityList.get(i).getId() == cityId) {
                 cityName = cityList.get(i).getCityname();
                 break;
             }
@@ -70,6 +70,7 @@ public class FormStatistics extends javax.swing.JDialog {
     private void initCombo() {
 
         class ItemChangeListener implements ItemListener {
+
             @Override
             public void itemStateChanged(ItemEvent event) {
                 if (event.getStateChange() == ItemEvent.SELECTED) {

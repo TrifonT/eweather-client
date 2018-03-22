@@ -49,16 +49,17 @@ public class FormShowPrognosis extends javax.swing.JDialog {
         this.jTablePrognosis.setIntercellSpacing(new Dimension(20, 0));
         this.jTablePrognosis.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
     }
-    
+
     private void clearTable() {
         List<Weatherdata> t = new ArrayList<>();
-        WeatherTableModel wtm = new WeatherTableModel(t);    
+        WeatherTableModel wtm = new WeatherTableModel(t);
         jTablePrognosis.setModel(wtm);
-    }    
+    }
 
     private void initCombo() {
 
         class ItemChangeListener implements ItemListener {
+
             @Override
             public void itemStateChanged(ItemEvent event) {
                 if (event.getStateChange() == ItemEvent.SELECTED) {
@@ -66,8 +67,8 @@ public class FormShowPrognosis extends javax.swing.JDialog {
                 }
             }
         }
-        jComboCities.addItemListener( new ItemChangeListener());
-            
+        jComboCities.addItemListener(new ItemChangeListener());
+
         for (int i = 0; i < cityList.size(); i++) {
             this.jComboCities.addItem(cityList.get(i).getCityname());
         }
@@ -132,11 +133,11 @@ public class FormShowPrognosis extends javax.swing.JDialog {
         showPrognosis(weatherdata);
     }
 
-    private void updatePrognosis(){
+    private void updatePrognosis() {
         DataController.updatePrognosisWeather();
-        showPrognosis1Day();   
+        showPrognosis1Day();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
