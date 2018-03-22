@@ -1,7 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* 
+ *  Ο κώδικας αυτός είναι μέρος της ομαδικής εργασίας 
+ *  στο πλαίσο της θεματικής ενότητας ΠΛΗ240 των
+ *  φοιτητών του ΕΑΠ
+ *  Παυλίδη Άρη
+ *  Ταφραλίδη Νικόλαου
+ *  Τριανταφυλλίδη Τρύφων
  */
 package eweather.gui;
 
@@ -10,9 +13,14 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.SplashScreen;
+import java.awt.Toolkit;
 import java.awt.geom.Rectangle2D;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 /**
@@ -24,7 +32,7 @@ public class FormMenu extends javax.swing.JFrame {
     /**
      * Creates new form FormMenu
      */
-    public FormMenu() {
+    public FormMenu() {   
         initComponents();
     }
 
@@ -144,9 +152,9 @@ public class FormMenu extends javax.swing.JFrame {
 
         splashInit();
 
-        DataController.initCities();
-        DataController.updateCurrentWeather();
-        DataController.updatePrognosisWeather();
+//        DataController.initCities();
+//        DataController.updateCurrentWeather();
+//        DataController.updatePrognosisWeather();
 
 
         /* Set the Nimbus look and feel */
@@ -176,6 +184,7 @@ public class FormMenu extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 FormMenu f = new FormMenu();
+                f.setIcons();
                 f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 f.setVisible(true);
             }
@@ -217,6 +226,18 @@ public class FormMenu extends javax.swing.JFrame {
             splashText("Παρακαλώ περιμένετε μέχρι να ολοκληρωθεί η ενημέρωση των στοιχείων");
         }
     }
+    
+    private void setIcons(){
+        List<Image> lstImg = new ArrayList<>();
+        ImageIcon i16 = new ImageIcon(getClass().getClassLoader().getResource("resources/wicon16.png"));
+        ImageIcon i24 = new ImageIcon(getClass().getClassLoader().getResource("resources/wicon24.png"));
+        ImageIcon i32 = new ImageIcon(getClass().getClassLoader().getResource("resources/wicon32.png"));
+        lstImg.add(i16.getImage());
+        lstImg.add(i24.getImage());
+        lstImg.add(i32.getImage());
+        this.setIconImages(lstImg);
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBTN1;
