@@ -1,4 +1,3 @@
-
 package eweather.controllers;
 
 import eweather.db.City;
@@ -85,8 +84,8 @@ public class DataController {
     }
 
     /**
-     * Καταχωρεί τον τρέχοντα καιρό που υπάρχει στο αντικείμενο Weatherdata σε
-     * μια συγκεκριμένη πόλη με ID = cityId
+     * Καταχωρεί τον τρέχοντα καιρό που υπάρχει στο αντικείμενο 
+     * Weatherdata σε μια συγκεκριμένη πόλη με ID = cityId
      *
      * @param cityId ο κωδικός της πόλης
      * @param data το αντικείμενο που περιέχει τον καιτό της πόλης
@@ -133,9 +132,9 @@ public class DataController {
     }
 
     /**
-     * Μετατρέπει ένα αντικείμενο WeatherReport που προήλθε από τον WebApiClient
-     * σε ένα αντικείμενο WeatherData που αφορά την βάση δεδομένων. Έπειτα αυτό
-     * το αντικείμενο στέλνεται προς ενημέρωση.
+     * Μετατρέπει ένα αντικείμενο WeatherReport που προήλθε από τον 
+     * WebApiClient σε ένα αντικείμενο WeatherData που αφορά την 
+     * βάση δεδομένων. Έπειτα αυτό το αντικείμενο στέλνεται προς ενημέρωση.
      *
      * @param report Το αντικείμενο που περιέχει τα στοιχεία για ενημέρωση
      * @param cityid Ορίζει την πόλη που αφορά η πρόγνωση
@@ -192,9 +191,11 @@ public class DataController {
     }
 
     /**
+     * Επιστρέφει τον καιρό για τις πόλεις με τα ID που περιέχονται 
+     * στο όρισμα της συνάρτησης.
      *
-     * @param cityIds
-     * @return
+     * @param cityIds Λίστα με ID
+     * @return Λίστα με αντικείμενα Weatherdata
      */
     public static List<Weatherdata> getWeatherdata(List<Long> cityIds) {
 
@@ -209,16 +210,39 @@ public class DataController {
         return result;
     }
 
+    /**
+     * Επιστρέφει όλα τα δεδομένα καιρού που είναι αποθηκευμένα 
+     * στην βάση δεδομένων για μια συγκεκριμένη πόλη
+     *
+     * @param cityId Το ID της πόλης
+     * @return Λίστα με δεδομένα καιρού
+     */
     public static List<Weatherdata> getAllWeatherdata(Long cityId) {
         WeatherdataJpaController cntrl = new WeatherdataJpaController(getEMF());
         return cntrl.getCityWeather(cityId, false, Integer.MAX_VALUE);
     }
 
+    /**
+     * Επιστρέφει τις εγγραφές πρόγνωσης που αφορούν μια πόλη για το
+     * διάστημα μιας ημέρας.
+     * 
+     * @param cityId Το ID της πόλης
+     * @param dt_start Ημερομηνία που αφορά την αρχή των προβλέψεων
+     * @return Λίστα με αντικείμενα Weatherdata
+     */
     public static List<Weatherdata> getPrognosis1Day(Long cityId, Date dt_start) {
         WeatherdataJpaController cntrl = new WeatherdataJpaController(getEMF());
         return cntrl.getWeatherFromTo(cityId, true, dt_start, 8);
     }
 
+    /**
+     * Επιστρέφει τις εγγραφές πρόγνωσης που αφορούν μια πόλη για το
+     * διάστημα 5 ημερών
+     * 
+     * @param cityId
+     * @param dt_start
+     * @return 
+     */
     public static List<Weatherdata> getPrognosis5Day(Long cityId, Date dt_start) {
         WeatherdataJpaController cntrl = new WeatherdataJpaController(getEMF());
         return cntrl.getWeatherFromTo(cityId, true, dt_start, 40);

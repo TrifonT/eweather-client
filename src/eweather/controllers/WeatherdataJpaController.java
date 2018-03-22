@@ -209,6 +209,6 @@ public class WeatherdataJpaController implements Serializable {
         query.setParameter("dt_start", dt_start);
         query.setMaxResults(maxRecords);
         return query.getResultList();
-    }   
+    }
 
 }
