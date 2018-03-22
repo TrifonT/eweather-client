@@ -239,25 +239,15 @@ public class DataController {
      * Επιστρέφει τις εγγραφές πρόγνωσης που αφορούν μια πόλη για το
      * διάστημα 5 ημερών
      * 
-     * @param cityId
-     * @param dt_start
-     * @return 
+     * @param cityId Το ID της πόλης
+     * @param dt_start Ημερομηνία που αφορά την αρχή των προβλέψεων
+     * @return Λίστα με αντικείμενα Weatherdata
      */
     public static List<Weatherdata> getPrognosis5Day(Long cityId, Date dt_start) {
         WeatherdataJpaController cntrl = new WeatherdataJpaController(getEMF());
         return cntrl.getWeatherFromTo(cityId, true, dt_start, 40);
     }
 
-    /**
-     *
-     * @param cityId
-     * @param days
-     * @return
-     */
-    public static List<Weatherdata> getPrognosisdata(Long cityId, int days) {
-        int count = days * 8;
-        WeatherdataJpaController cntrl = new WeatherdataJpaController(getEMF());
-        return cntrl.getCityWeather(cityId, true, count);
-    }
+
 
 }
