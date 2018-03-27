@@ -15,6 +15,7 @@ import java.awt.Dimension;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JLabel;
@@ -133,7 +134,29 @@ public class FormShowPrognosis extends javax.swing.JDialog {
         List<Weatherdata> weatherdata
                 = DataController.getPrognosis5Day(cityId, dt_start);
 
-        showPrognosis(weatherdata);
+        List<Weatherdata> filteredwd = filterPrognosis(weatherdata);
+
+        showPrognosis(filteredwd);
+    }
+
+    private List<Weatherdata> filterPrognosis(List<Weatherdata> list) {
+        ArrayList<Weatherdata> result = new ArrayList<>();
+        if (list.size() > 0) {
+            Weatherdata first = list.get(0);
+            Calendar fcal = Calendar.getInstance();
+            fcal.setTime(first.getDt());
+            int today = fcal.get(Calendar.DAY_OF_MONTH);
+            result.add(first);
+            for (int i = 1; i < list.size(); i++) {
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(list.get(i).getDt());
+                if ((cal.get(Calendar.HOUR_OF_DAY) == 12)
+                        && (cal.get(Calendar.DAY_OF_MONTH) > today)) {
+                    result.add(list.get(i));
+                }
+            }
+        }
+        return result;
     }
 
     private void updatePrognosis() {
@@ -152,11 +175,11 @@ public class FormShowPrognosis extends javax.swing.JDialog {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablePrognosis = new javax.swing.JTable();
-        jBTN1 = new javax.swing.JButton();
-        jBTN2 = new javax.swing.JButton();
-        jBTN3 = new javax.swing.JButton();
+        btnPrognosis1Day = new javax.swing.JButton();
+        btnPrognosis5Days = new javax.swing.JButton();
+        btnPrognosisReturn = new javax.swing.JButton();
         jComboCities = new javax.swing.JComboBox<>();
-        jBTN4 = new javax.swing.JButton();
+        btnPrognosisRefresh = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ο Καιρός Τώρα");
@@ -175,41 +198,41 @@ public class FormShowPrognosis extends javax.swing.JDialog {
         jTablePrognosis.setRowHeight(55);
         jScrollPane1.setViewportView(jTablePrognosis);
 
-        jBTN1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jBTN1.setText("Πρόβλεψη καιρού 1ας ημέρας");
-        jBTN1.setToolTipText("Προβολή από την βάση δεδομένων των προβλέψεων 1ας ημέρας");
-        jBTN1.addActionListener(new java.awt.event.ActionListener() {
+        btnPrognosis1Day.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnPrognosis1Day.setText("Πρόβλεψη καιρού 1ας ημέρας");
+        btnPrognosis1Day.setToolTipText("Προβολή από την βάση δεδομένων των προβλέψεων 1ας ημέρας");
+        btnPrognosis1Day.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTN1ActionPerformed(evt);
+                btnPrognosis1DayActionPerformed(evt);
             }
         });
 
-        jBTN2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jBTN2.setText("Πρόβλεψη καιρού 5 ημερών.");
-        jBTN2.setToolTipText("Πρόβλεψη καιρού 5 ημερών.");
-        jBTN2.addActionListener(new java.awt.event.ActionListener() {
+        btnPrognosis5Days.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnPrognosis5Days.setText("Πρόβλεψη καιρού 5 ημερών.");
+        btnPrognosis5Days.setToolTipText("Πρόβλεψη καιρού 5 ημερών.");
+        btnPrognosis5Days.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTN2ActionPerformed(evt);
+                btnPrognosis5DaysActionPerformed(evt);
             }
         });
 
-        jBTN3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jBTN3.setText("Επιστροφή");
-        jBTN3.setToolTipText("Επιστοφή στις επιλογές της κύριας φόρμας.");
-        jBTN3.addActionListener(new java.awt.event.ActionListener() {
+        btnPrognosisReturn.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnPrognosisReturn.setText("Επιστροφή");
+        btnPrognosisReturn.setToolTipText("Επιστοφή στις επιλογές της κύριας φόρμας.");
+        btnPrognosisReturn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTN3ActionPerformed(evt);
+                btnPrognosisReturnActionPerformed(evt);
             }
         });
 
         jComboCities.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Επιλέξτε μια πόλη ..." }));
 
-        jBTN4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jBTN4.setText("Ανανέωση πρόβλεψης καιρού");
-        jBTN4.setToolTipText("Πρόβλεψη καιρού 5 ημερών.");
-        jBTN4.addActionListener(new java.awt.event.ActionListener() {
+        btnPrognosisRefresh.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnPrognosisRefresh.setText("Ανανέωση πρόβλεψης καιρού");
+        btnPrognosisRefresh.setToolTipText("Πρόβλεψη καιρού 5 ημερών.");
+        btnPrognosisRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTN4ActionPerformed(evt);
+                btnPrognosisRefreshActionPerformed(evt);
             }
         });
 
@@ -220,11 +243,11 @@ public class FormShowPrognosis extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jBTN2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBTN1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBTN3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPrognosis5Days, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPrognosis1Day, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPrognosisReturn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboCities, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBTN4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnPrognosisRefresh, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
                 .addContainerGap())
@@ -238,13 +261,13 @@ public class FormShowPrognosis extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jComboCities, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(144, 144, 144)
-                        .addComponent(jBTN1)
+                        .addComponent(btnPrognosis1Day)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBTN2)
+                        .addComponent(btnPrognosis5Days)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBTN4)
+                        .addComponent(btnPrognosisRefresh)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBTN3)
+                        .addComponent(btnPrognosisReturn)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -253,28 +276,28 @@ public class FormShowPrognosis extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTN1ActionPerformed
+    private void btnPrognosis1DayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrognosis1DayActionPerformed
         showPrognosis1Day();
-    }//GEN-LAST:event_jBTN1ActionPerformed
+    }//GEN-LAST:event_btnPrognosis1DayActionPerformed
 
-    private void jBTN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTN2ActionPerformed
+    private void btnPrognosis5DaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrognosis5DaysActionPerformed
         showPrognosis5Days();
-    }//GEN-LAST:event_jBTN2ActionPerformed
+    }//GEN-LAST:event_btnPrognosis5DaysActionPerformed
 
-    private void jBTN3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTN3ActionPerformed
+    private void btnPrognosisReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrognosisReturnActionPerformed
         this.setVisible(false);
         this.dispose();
-    }//GEN-LAST:event_jBTN3ActionPerformed
+    }//GEN-LAST:event_btnPrognosisReturnActionPerformed
 
-    private void jBTN4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTN4ActionPerformed
+    private void btnPrognosisRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrognosisRefreshActionPerformed
         updatePrognosis();
-    }//GEN-LAST:event_jBTN4ActionPerformed
+    }//GEN-LAST:event_btnPrognosisRefreshActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBTN1;
-    private javax.swing.JButton jBTN2;
-    private javax.swing.JButton jBTN3;
-    private javax.swing.JButton jBTN4;
+    private javax.swing.JButton btnPrognosis1Day;
+    private javax.swing.JButton btnPrognosis5Days;
+    private javax.swing.JButton btnPrognosisRefresh;
+    private javax.swing.JButton btnPrognosisReturn;
     private javax.swing.JComboBox<String> jComboCities;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTablePrognosis;

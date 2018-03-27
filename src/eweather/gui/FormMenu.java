@@ -15,7 +15,6 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.SplashScreen;
-import java.awt.Toolkit;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +31,7 @@ public class FormMenu extends javax.swing.JFrame {
     /**
      * Creates new form FormMenu
      */
-    public FormMenu() {   
+    public FormMenu() {
         initComponents();
     }
 
@@ -45,10 +44,10 @@ public class FormMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jBTN1 = new javax.swing.JButton();
-        jBTN2 = new javax.swing.JButton();
-        jBTN3 = new javax.swing.JButton();
-        jBTN4 = new javax.swing.JButton();
+        btnMainWeatherNow = new javax.swing.JButton();
+        btnMainPrognosis = new javax.swing.JButton();
+        btnMainExit = new javax.swing.JButton();
+        btnMainStatistics = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,57 +56,57 @@ public class FormMenu extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(640, 440));
         getContentPane().setLayout(null);
 
-        jBTN1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jBTN1.setText("Ο Καιρός Τώρα");
-        jBTN1.setMaximumSize(new java.awt.Dimension(300, 50));
-        jBTN1.setMinimumSize(new java.awt.Dimension(300, 50));
-        jBTN1.setPreferredSize(new java.awt.Dimension(300, 50));
-        jBTN1.addActionListener(new java.awt.event.ActionListener() {
+        btnMainWeatherNow.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnMainWeatherNow.setText("Ο Καιρός Τώρα");
+        btnMainWeatherNow.setMaximumSize(new java.awt.Dimension(300, 50));
+        btnMainWeatherNow.setMinimumSize(new java.awt.Dimension(300, 50));
+        btnMainWeatherNow.setPreferredSize(new java.awt.Dimension(300, 50));
+        btnMainWeatherNow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTN1ActionPerformed(evt);
+                btnMainWeatherNowActionPerformed(evt);
             }
         });
-        getContentPane().add(jBTN1);
-        jBTN1.setBounds(180, 80, 280, 40);
+        getContentPane().add(btnMainWeatherNow);
+        btnMainWeatherNow.setBounds(180, 80, 280, 40);
 
-        jBTN2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jBTN2.setText("Πρόβλεψη Καιρού");
-        jBTN2.setMaximumSize(new java.awt.Dimension(300, 50));
-        jBTN2.setMinimumSize(new java.awt.Dimension(300, 50));
-        jBTN2.setPreferredSize(new java.awt.Dimension(300, 50));
-        jBTN2.addActionListener(new java.awt.event.ActionListener() {
+        btnMainPrognosis.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnMainPrognosis.setText("Πρόβλεψη Καιρού");
+        btnMainPrognosis.setMaximumSize(new java.awt.Dimension(300, 50));
+        btnMainPrognosis.setMinimumSize(new java.awt.Dimension(300, 50));
+        btnMainPrognosis.setPreferredSize(new java.awt.Dimension(300, 50));
+        btnMainPrognosis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTN2ActionPerformed(evt);
+                btnMainPrognosisActionPerformed(evt);
             }
         });
-        getContentPane().add(jBTN2);
-        jBTN2.setBounds(180, 150, 280, 40);
+        getContentPane().add(btnMainPrognosis);
+        btnMainPrognosis.setBounds(180, 150, 280, 40);
 
-        jBTN3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jBTN3.setText("Έξοδος");
-        jBTN3.setMaximumSize(new java.awt.Dimension(300, 50));
-        jBTN3.setMinimumSize(new java.awt.Dimension(300, 50));
-        jBTN3.setPreferredSize(new java.awt.Dimension(300, 50));
-        jBTN3.addActionListener(new java.awt.event.ActionListener() {
+        btnMainExit.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnMainExit.setText("Έξοδος");
+        btnMainExit.setMaximumSize(new java.awt.Dimension(300, 50));
+        btnMainExit.setMinimumSize(new java.awt.Dimension(300, 50));
+        btnMainExit.setPreferredSize(new java.awt.Dimension(300, 50));
+        btnMainExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTN3ActionPerformed(evt);
+                btnMainExitActionPerformed(evt);
             }
         });
-        getContentPane().add(jBTN3);
-        jBTN3.setBounds(180, 290, 280, 40);
+        getContentPane().add(btnMainExit);
+        btnMainExit.setBounds(180, 290, 280, 40);
 
-        jBTN4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jBTN4.setText("Στατιστικά");
-        jBTN4.setMaximumSize(new java.awt.Dimension(300, 50));
-        jBTN4.setMinimumSize(new java.awt.Dimension(300, 50));
-        jBTN4.setPreferredSize(new java.awt.Dimension(300, 50));
-        jBTN4.addActionListener(new java.awt.event.ActionListener() {
+        btnMainStatistics.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnMainStatistics.setText("Στατιστικά");
+        btnMainStatistics.setMaximumSize(new java.awt.Dimension(300, 50));
+        btnMainStatistics.setMinimumSize(new java.awt.Dimension(300, 50));
+        btnMainStatistics.setPreferredSize(new java.awt.Dimension(300, 50));
+        btnMainStatistics.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTN4ActionPerformed(evt);
+                btnMainStatisticsActionPerformed(evt);
             }
         });
-        getContentPane().add(jBTN4);
-        jBTN4.setBounds(180, 220, 280, 40);
+        getContentPane().add(btnMainStatistics);
+        btnMainStatistics.setBounds(180, 220, 280, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/w.gif"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -117,31 +116,31 @@ public class FormMenu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTN1ActionPerformed
+    private void btnMainWeatherNowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMainWeatherNowActionPerformed
         this.setVisible(false);
         FormShowCurrent f = new FormShowCurrent(this, true);
         f.setVisible(true);
         this.setVisible(true);
-    }//GEN-LAST:event_jBTN1ActionPerformed
+    }//GEN-LAST:event_btnMainWeatherNowActionPerformed
 
-    private void jBTN3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTN3ActionPerformed
+    private void btnMainExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMainExitActionPerformed
         this.setVisible(false);
         System.exit(0);
-    }//GEN-LAST:event_jBTN3ActionPerformed
+    }//GEN-LAST:event_btnMainExitActionPerformed
 
-    private void jBTN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTN2ActionPerformed
+    private void btnMainPrognosisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMainPrognosisActionPerformed
         this.setVisible(false);
         FormShowPrognosis f = new FormShowPrognosis(this, true);
         f.setVisible(true);
         this.setVisible(true);
-    }//GEN-LAST:event_jBTN2ActionPerformed
+    }//GEN-LAST:event_btnMainPrognosisActionPerformed
 
-    private void jBTN4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTN4ActionPerformed
+    private void btnMainStatisticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMainStatisticsActionPerformed
         this.setVisible(false);
         FormStatistics f = new FormStatistics(this, true);
         f.setVisible(true);
         this.setVisible(true);
-    }//GEN-LAST:event_jBTN4ActionPerformed
+    }//GEN-LAST:event_btnMainStatisticsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,9 +151,9 @@ public class FormMenu extends javax.swing.JFrame {
 
         splashInit();
 
-//        DataController.initCities();
-//        DataController.updateCurrentWeather();
-//        DataController.updatePrognosisWeather();
+        DataController.initCities();
+        DataController.updateCurrentWeather();
+        DataController.updatePrognosisWeather();
 
 
         /* Set the Nimbus look and feel */
@@ -226,8 +225,8 @@ public class FormMenu extends javax.swing.JFrame {
             splashText("Παρακαλώ περιμένετε μέχρι να ολοκληρωθεί η ενημέρωση των στοιχείων");
         }
     }
-    
-    private void setIcons(){
+
+    private void setIcons() {
         List<Image> lstImg = new ArrayList<>();
         ImageIcon i16 = new ImageIcon(getClass().getClassLoader().getResource("resources/wicon16.png"));
         ImageIcon i24 = new ImageIcon(getClass().getClassLoader().getResource("resources/wicon24.png"));
@@ -237,13 +236,12 @@ public class FormMenu extends javax.swing.JFrame {
         lstImg.add(i32.getImage());
         this.setIconImages(lstImg);
     }
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBTN1;
-    private javax.swing.JButton jBTN2;
-    private javax.swing.JButton jBTN3;
-    private javax.swing.JButton jBTN4;
+    private javax.swing.JButton btnMainExit;
+    private javax.swing.JButton btnMainPrognosis;
+    private javax.swing.JButton btnMainStatistics;
+    private javax.swing.JButton btnMainWeatherNow;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 

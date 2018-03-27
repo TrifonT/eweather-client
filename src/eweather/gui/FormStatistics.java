@@ -184,9 +184,9 @@ public class FormStatistics extends javax.swing.JDialog {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableStats = new javax.swing.JTable();
-        jBTN1 = new javax.swing.JButton();
-        jBTN2 = new javax.swing.JButton();
-        jBTN3 = new javax.swing.JButton();
+        btnStatisticsMinMax = new javax.swing.JButton();
+        btnStatisticsCitiesTemp = new javax.swing.JButton();
+        btnStatisticsReturn = new javax.swing.JButton();
         jComboCities = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -206,30 +206,30 @@ public class FormStatistics extends javax.swing.JDialog {
         jTableStats.setRowHeight(55);
         jScrollPane1.setViewportView(jTableStats);
 
-        jBTN1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jBTN1.setText("Θερμοκρασία Min/Max");
-        jBTN1.setToolTipText("Προβολή από την βάση δεδομένων των προβλέψεων 1ας ημέρας");
-        jBTN1.addActionListener(new java.awt.event.ActionListener() {
+        btnStatisticsMinMax.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnStatisticsMinMax.setText("Θερμοκρασία Min/Max");
+        btnStatisticsMinMax.setToolTipText("Προβολή από την βάση δεδομένων των προβλέψεων 1ας ημέρας");
+        btnStatisticsMinMax.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTN1ActionPerformed(evt);
+                btnStatisticsMinMaxActionPerformed(evt);
             }
         });
 
-        jBTN2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jBTN2.setText("Θερμοκρασία ανά πόλη");
-        jBTN2.setToolTipText("Πρόβλεψη καιρού 5 ημερών.");
-        jBTN2.addActionListener(new java.awt.event.ActionListener() {
+        btnStatisticsCitiesTemp.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnStatisticsCitiesTemp.setText("Θερμοκρασία ανά πόλη");
+        btnStatisticsCitiesTemp.setToolTipText("Πρόβλεψη καιρού 5 ημερών.");
+        btnStatisticsCitiesTemp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTN2ActionPerformed(evt);
+                btnStatisticsCitiesTempActionPerformed(evt);
             }
         });
 
-        jBTN3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jBTN3.setText("Επιστροφή");
-        jBTN3.setToolTipText("Επιστοφή στις επιλογές της κύριας φόρμας.");
-        jBTN3.addActionListener(new java.awt.event.ActionListener() {
+        btnStatisticsReturn.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnStatisticsReturn.setText("Επιστροφή");
+        btnStatisticsReturn.setToolTipText("Επιστοφή στις επιλογές της κύριας φόρμας.");
+        btnStatisticsReturn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTN3ActionPerformed(evt);
+                btnStatisticsReturnActionPerformed(evt);
             }
         });
 
@@ -242,9 +242,9 @@ public class FormStatistics extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jBTN2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                    .addComponent(jBTN1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBTN3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStatisticsCitiesTemp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                    .addComponent(btnStatisticsMinMax, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStatisticsReturn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboCities, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)
@@ -259,11 +259,11 @@ public class FormStatistics extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jComboCities, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(144, 144, 144)
-                        .addComponent(jBTN1)
+                        .addComponent(btnStatisticsMinMax)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBTN2)
+                        .addComponent(btnStatisticsCitiesTemp)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBTN3)
+                        .addComponent(btnStatisticsReturn)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -272,23 +272,23 @@ public class FormStatistics extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTN1ActionPerformed
+    private void btnStatisticsMinMaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatisticsMinMaxActionPerformed
         showStats1City();
-    }//GEN-LAST:event_jBTN1ActionPerformed
+    }//GEN-LAST:event_btnStatisticsMinMaxActionPerformed
 
-    private void jBTN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTN2ActionPerformed
+    private void btnStatisticsCitiesTempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatisticsCitiesTempActionPerformed
         showStatsAllCities();
-    }//GEN-LAST:event_jBTN2ActionPerformed
+    }//GEN-LAST:event_btnStatisticsCitiesTempActionPerformed
 
-    private void jBTN3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTN3ActionPerformed
+    private void btnStatisticsReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatisticsReturnActionPerformed
         this.setVisible(false);
         this.dispose();
-    }//GEN-LAST:event_jBTN3ActionPerformed
+    }//GEN-LAST:event_btnStatisticsReturnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBTN1;
-    private javax.swing.JButton jBTN2;
-    private javax.swing.JButton jBTN3;
+    private javax.swing.JButton btnStatisticsCitiesTemp;
+    private javax.swing.JButton btnStatisticsMinMax;
+    private javax.swing.JButton btnStatisticsReturn;
     private javax.swing.JComboBox<String> jComboCities;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableStats;

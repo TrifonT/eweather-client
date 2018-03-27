@@ -8,8 +8,8 @@
  */
 package eweather.gui;
 
-import javax.swing.table.AbstractTableModel;
 import java.util.List;
+import javax.swing.table.AbstractTableModel;
 
 /**
  *
@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class StatTableModel extends AbstractTableModel {
 
-    private String[] columnNames = {
+    private final String[] columnNames = {
         "<html><center>Πόλη</center></html>",
         "<html><center>Mέγιστη<br/>Θερμοκρασία</center></html>",
         "<html><center>Ημερομ./ώρα<br/>Μέγιστης</center></html>",

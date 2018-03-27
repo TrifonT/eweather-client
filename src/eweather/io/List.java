@@ -1,11 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* 
+ *  Ο κώδικας αυτός είναι μέρος της ομαδικής εργασίας 
+ *  στο πλαίσο της θεματικής ενότητας ΠΛΗ240 των
+ *  φοιτητών του ΕΑΠ
+ *  Παυλίδη Άρη
+ *  Ταφραλίδη Νικόλαου
+ *  Τριανταφυλλίδη Τρύφων
  */
 package eweather.io;
-
-import java.util.ArrayList;
 
 /**
  *

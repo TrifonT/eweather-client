@@ -27,11 +27,11 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="jBTN2" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jBTN1" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jBTN3" max="32767" attributes="0"/>
+                  <Component id="btnPrognosis5Days" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnPrognosis1Day" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnPrognosisReturn" max="32767" attributes="0"/>
                   <Component id="jComboCities" max="32767" attributes="0"/>
-                  <Component id="jBTN4" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnPrognosisRefresh" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" pref="777" max="32767" attributes="0"/>
@@ -48,13 +48,13 @@
                   <Group type="102" attributes="0">
                       <Component id="jComboCities" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
-                      <Component id="jBTN1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnPrognosis1Day" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jBTN2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnPrognosis5Days" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jBTN4" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnPrognosisRefresh" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jBTN3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnPrognosisReturn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -89,7 +89,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jBTN1">
+    <Component class="javax.swing.JButton" name="btnPrognosis1Day">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
@@ -98,10 +98,10 @@
         <Property name="toolTipText" type="java.lang.String" value="&#x3a0;&#x3c1;&#x3bf;&#x3b2;&#x3bf;&#x3bb;&#x3ae; &#x3b1;&#x3c0;&#x3cc; &#x3c4;&#x3b7;&#x3bd; &#x3b2;&#x3ac;&#x3c3;&#x3b7; &#x3b4;&#x3b5;&#x3b4;&#x3bf;&#x3bc;&#x3ad;&#x3bd;&#x3c9;&#x3bd; &#x3c4;&#x3c9;&#x3bd; &#x3c0;&#x3c1;&#x3bf;&#x3b2;&#x3bb;&#x3ad;&#x3c8;&#x3b5;&#x3c9;&#x3bd; 1&#x3b1;&#x3c2; &#x3b7;&#x3bc;&#x3ad;&#x3c1;&#x3b1;&#x3c2;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBTN1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPrognosis1DayActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jBTN2">
+    <Component class="javax.swing.JButton" name="btnPrognosis5Days">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
@@ -110,10 +110,10 @@
         <Property name="toolTipText" type="java.lang.String" value="&#x3a0;&#x3c1;&#x3cc;&#x3b2;&#x3bb;&#x3b5;&#x3c8;&#x3b7; &#x3ba;&#x3b1;&#x3b9;&#x3c1;&#x3bf;&#x3cd; 5 &#x3b7;&#x3bc;&#x3b5;&#x3c1;&#x3ce;&#x3bd;."/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBTN2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPrognosis5DaysActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jBTN3">
+    <Component class="javax.swing.JButton" name="btnPrognosisReturn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
@@ -122,7 +122,7 @@
         <Property name="toolTipText" type="java.lang.String" value="&#x395;&#x3c0;&#x3b9;&#x3c3;&#x3c4;&#x3bf;&#x3c6;&#x3ae; &#x3c3;&#x3c4;&#x3b9;&#x3c2; &#x3b5;&#x3c0;&#x3b9;&#x3bb;&#x3bf;&#x3b3;&#x3ad;&#x3c2; &#x3c4;&#x3b7;&#x3c2; &#x3ba;&#x3cd;&#x3c1;&#x3b9;&#x3b1;&#x3c2; &#x3c6;&#x3cc;&#x3c1;&#x3bc;&#x3b1;&#x3c2;."/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBTN3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPrognosisReturnActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboCities">
@@ -137,7 +137,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="jBTN4">
+    <Component class="javax.swing.JButton" name="btnPrognosisRefresh">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
@@ -146,7 +146,7 @@
         <Property name="toolTipText" type="java.lang.String" value="&#x3a0;&#x3c1;&#x3cc;&#x3b2;&#x3bb;&#x3b5;&#x3c8;&#x3b7; &#x3ba;&#x3b1;&#x3b9;&#x3c1;&#x3bf;&#x3cd; 5 &#x3b7;&#x3bc;&#x3b5;&#x3c1;&#x3ce;&#x3bd;."/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBTN4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPrognosisRefreshActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

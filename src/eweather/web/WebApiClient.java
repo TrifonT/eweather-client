@@ -1,18 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* 
+ *  Ο κώδικας αυτός είναι μέρος της ομαδικής εργασίας 
+ *  στο πλαίσο της θεματικής ενότητας ΠΛΗ240 των
+ *  φοιτητών του ΕΑΠ
+ *  Παυλίδη Άρη
+ *  Ταφραλίδη Νικόλαου
+ *  Τριανταφυλλίδη Τρύφων
  */
 package eweather.web;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.HttpURLConnection;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import eweather.io.WeatherReport;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 import java.util.logging.Level;
@@ -87,7 +90,7 @@ public class WebApiClient {
 
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
-        con.setRequestProperty("User-Agent", "eWeather client");
+        con.setRequestProperty("User-Agent", "application/json");
 
         StringBuilder response = new StringBuilder();
         try (BufferedReader in = new BufferedReader(

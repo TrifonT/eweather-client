@@ -15,6 +15,7 @@ import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import static org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ;
@@ -74,6 +75,14 @@ public class FormShowCurrent extends javax.swing.JDialog {
 
     void showWeatherNow() {
         List<Long> ids = getSelectedCityIds();
+        if (ids.isEmpty()) {
+            JOptionPane.showMessageDialog(this,
+                    "Δεν έχετε επιλέξει πόλη",
+                    "Προειδοποίηση",
+                    JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
         List<Weatherdata> weatherdata = DataController.getWeatherdata(ids);
         WeatherTableModel model = new WeatherTableModel(weatherdata);
 
@@ -111,9 +120,9 @@ public class FormShowCurrent extends javax.swing.JDialog {
         jTableCurrentWeather = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jListCities = new javax.swing.JList<>();
-        jBTN1 = new javax.swing.JButton();
-        jBTN2 = new javax.swing.JButton();
-        jBTN3 = new javax.swing.JButton();
+        btnCurrentWeatherNow = new javax.swing.JButton();
+        btnCurrentRefresh = new javax.swing.JButton();
+        btnCurrentReturn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ο Καιρός Τώρα");
@@ -138,30 +147,30 @@ public class FormShowCurrent extends javax.swing.JDialog {
         jListCities.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jScrollPane2.setViewportView(jListCities);
 
-        jBTN1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jBTN1.setText("Καιρός Τώρα");
-        jBTN1.setToolTipText("Προβολή από την βάση δεδομένων των πιο πρόσφατων καιρικών συνθηκών των επιλεγμένων πόλεων");
-        jBTN1.addActionListener(new java.awt.event.ActionListener() {
+        btnCurrentWeatherNow.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnCurrentWeatherNow.setText("Καιρός Τώρα");
+        btnCurrentWeatherNow.setToolTipText("Προβολή από την βάση δεδομένων των πιο πρόσφατων καιρικών συνθηκών των επιλεγμένων πόλεων");
+        btnCurrentWeatherNow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTN1ActionPerformed(evt);
+                btnCurrentWeatherNowActionPerformed(evt);
             }
         });
 
-        jBTN2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jBTN2.setText("Ανανέωση");
-        jBTN2.setToolTipText("Ενημέρωση των πιο πρόσφατων καιρικών συνθηκών για όλες τις πόλεις και ανανέωση της προβολής τους.");
-        jBTN2.addActionListener(new java.awt.event.ActionListener() {
+        btnCurrentRefresh.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnCurrentRefresh.setText("Ανανέωση");
+        btnCurrentRefresh.setToolTipText("Ενημέρωση των πιο πρόσφατων καιρικών συνθηκών για όλες τις πόλεις και ανανέωση της προβολής τους.");
+        btnCurrentRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTN2ActionPerformed(evt);
+                btnCurrentRefreshActionPerformed(evt);
             }
         });
 
-        jBTN3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jBTN3.setText("Επιστροφή");
-        jBTN3.setToolTipText("Επιστοφή στις επιλογές της κύριας φόρμας.");
-        jBTN3.addActionListener(new java.awt.event.ActionListener() {
+        btnCurrentReturn.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnCurrentReturn.setText("Επιστροφή");
+        btnCurrentReturn.setToolTipText("Επιστοφή στις επιλογές της κύριας φόρμας.");
+        btnCurrentReturn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTN3ActionPerformed(evt);
+                btnCurrentReturnActionPerformed(evt);
             }
         });
 
@@ -172,9 +181,9 @@ public class FormShowCurrent extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jBTN2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBTN1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                    .addComponent(jBTN3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCurrentRefresh, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCurrentWeatherNow, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(btnCurrentReturn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
@@ -189,11 +198,11 @@ public class FormShowCurrent extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jBTN1)
+                        .addComponent(btnCurrentWeatherNow)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBTN2)
+                        .addComponent(btnCurrentRefresh)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBTN3)
+                        .addComponent(btnCurrentReturn)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -202,23 +211,23 @@ public class FormShowCurrent extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTN1ActionPerformed
+    private void btnCurrentWeatherNowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurrentWeatherNowActionPerformed
         showWeatherNow();
-    }//GEN-LAST:event_jBTN1ActionPerformed
+    }//GEN-LAST:event_btnCurrentWeatherNowActionPerformed
 
-    private void jBTN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTN2ActionPerformed
+    private void btnCurrentRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurrentRefreshActionPerformed
         updateWeather();
-    }//GEN-LAST:event_jBTN2ActionPerformed
+    }//GEN-LAST:event_btnCurrentRefreshActionPerformed
 
-    private void jBTN3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTN3ActionPerformed
+    private void btnCurrentReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurrentReturnActionPerformed
         this.setVisible(false);
         this.dispose();
-    }//GEN-LAST:event_jBTN3ActionPerformed
+    }//GEN-LAST:event_btnCurrentReturnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBTN1;
-    private javax.swing.JButton jBTN2;
-    private javax.swing.JButton jBTN3;
+    private javax.swing.JButton btnCurrentRefresh;
+    private javax.swing.JButton btnCurrentReturn;
+    private javax.swing.JButton btnCurrentWeatherNow;
     private javax.swing.JList<String> jListCities;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

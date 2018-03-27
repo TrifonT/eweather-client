@@ -8,11 +8,11 @@
  */
 package eweather.gui;
 
-import javax.swing.table.AbstractTableModel;
-import java.util.List;
 import eweather.db.Weatherdata;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
+import javax.swing.table.AbstractTableModel;
 
 /**
  *
@@ -20,7 +20,7 @@ import javax.swing.ImageIcon;
  */
 public class WeatherTableModel extends AbstractTableModel {
 
-    private String[] columnNames = {
+    private final String[] columnNames = {
         "<html><center>Πόλη</center></html>",
         "<html><center>Ημερομηνία,<br/>ώρα</center></html>",
         "<html><center></center></html>",
@@ -34,7 +34,7 @@ public class WeatherTableModel extends AbstractTableModel {
     private List<Weatherdata> data;
 
     WeatherTableModel() {
-        this.data = new ArrayList<Weatherdata>();
+        this.data = new ArrayList<>();
     }
 
     WeatherTableModel(List<Weatherdata> data) {
@@ -117,7 +117,8 @@ public class WeatherTableModel extends AbstractTableModel {
     }
 
     private ImageIcon getIconFromIconName(String iconName) {
-        ImageIcon result = new ImageIcon(getClass().getClassLoader().getResource("resources/icons/" + iconName + ".png"));
+        ImageIcon result = new ImageIcon(getClass().getClassLoader()
+                .getResource("resources/icons/" + iconName + ".png"));
         return result;
     }
 
